@@ -2,10 +2,8 @@ class RocketPIDController:
     """
     PID controller specifically for rocket airbrakes using apogee prediction.
     
-    Unlike standard PID, this:
-    - Uses PREDICTED apogee (not current altitude) as the process variable
-    - Controls brake position incrementally (adjusts by small amounts)
-    - Updates based on prediction error
+    Uses PREDICTED apogee (not current altitude) as the process variable
+    Updates based on prediction error
     """
     
     def __init__(self, rocket_sim, target_apogee, kp, ki, kd, dt=0.01):
