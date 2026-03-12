@@ -125,11 +125,6 @@ class RocketAltitudeSimulator(Simulator):
     
     def get_output(self):
         """
-        Return PREDICTED apogee based on current state and brake position.
-        
-        This is what the PID controller will try to match to the target.
-        The PID sees: "If I keep brakes at current position, where will I end up?"
-        
         Returns:
         --------
         float : Predicted final apogee (m)
@@ -147,7 +142,6 @@ class RocketAltitudeSimulator(Simulator):
     def step(self, dt):
         """
         Step simulation forward by dt seconds.
-        
         Updates the rocket's actual position and velocity based on
         current brake position.
         
@@ -179,9 +173,6 @@ class RocketAltitudeSimulator(Simulator):
     
     def get_altitude(self):
         """
-        Get current actual altitude.
-        
-        Note: This is NOT what PID controls - PID controls predicted apogee.
         This is useful for tracking real position during simulation.
         
         Returns:
@@ -192,8 +183,6 @@ class RocketAltitudeSimulator(Simulator):
     
     def get_velocity(self):
         """
-        Get current velocity.
-        
         Returns:
         --------
         float : Current velocity (m/s, positive = upward)
