@@ -11,6 +11,7 @@ When a model rocket is in unpowered ascent, small airbrake fins can be extended 
 The controller does not react to current altitude. Instead, it continuously predicts where the rocket will end up given the current state and brake position, and adjusts the brakes to drive that prediction toward the target.
 
 ---
+Earlier prototyping used fixed-altitude deployment and swept across a range of values to find the one closest to the target apogee. This is preserved in [`notebooks/fixed_altitude_threshold_sweep.ipynb`](notebooks/fixed_altitude_threshold_sweep.ipynb). The current version replaces this with real-time predictive PID control, described below.
 
 ## How It Works
 
